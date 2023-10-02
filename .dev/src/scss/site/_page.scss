@@ -1,7 +1,7 @@
 .default {
 	&__title {
 		@include general-title;
-		color: $cor-primaria;
+		color: #59595b;
 		&.smaller {
 			font-size: 32px;
 		}
@@ -53,13 +53,15 @@
 		}
 	}
 	.nav-link {
-		color: $cor-primaria;
+		color: $neutro-700;
 		text-transform: uppercase;
+		font-weight: bold;
 		text-decoration: none;
 	}
 }
 .hero {
-	background-color: $cor-primaria;
+	background: linear-gradient(90deg, rgba(56, 56, 56, 0.7) 0%, rgba(56, 56, 56, 0.7) 35%, rgba(56, 56, 56, 0.7) 100%), url("../assets/hero.jpeg");
+	background-size: cover;
 	&__container {
 		display: flex;
 		padding: 80px 0px;
@@ -96,9 +98,7 @@
 		}
 	}
 	&__logo {
-		max-width: 184px;
-		height: 44px;
-		background-color: #fff;
+		text-align: center;
 		margin-bottom: 32px;
 		@include media(s) {
 			margin-bottom: 24px;
@@ -123,7 +123,7 @@
 		}
 	}
 	&__content {
-		max-width: 673px;
+		max-width: 894px;
 		padding-top: 32px;
 		.button--container {
 			display: flex;
@@ -139,9 +139,14 @@
 	&__title {
 		@include hero;
 		margin-bottom: 16px;
+		span {
+			font-size: 40px;
+			line-height: 48px;
+		}
 	}
 	.default__desc {
 		margin-bottom: 32px;
+		font-weight: 300;
 	}
 }
 .resources {
@@ -159,8 +164,7 @@
 		}
 	}
 	.default__title {
-		color: $cor-primaria;
-		margin: 16px 0px;
+		margin-bottom: 48px;
 	}
 	.default__desc {
 		color: $texto-legenda;
@@ -172,72 +176,161 @@
 		align-items: center;
 		gap: 24px;
 		flex-wrap: wrap;
-		margin-bottom: 32px;
 		@include container;
+
+		margin-bottom: 48px;
 	}
 }
-.benefits {
-	background-color: $cor-primaria-clara;
-	padding: 80px 0px;
-	@include media(s) {
-		padding: 60px 0px;
-	}
+.numbers {
+	padding: 80px 24px;
 	&__container {
 		@include container;
 		display: flex;
-		gap: 58px;
-		@include media(s) {
-			flex-direction: column;
-		}
+		flex-wrap: wrap;
+		gap: 24px;
 	}
-	&__side {
-		max-width: 503px;
+	&__card {
+		max-width: 397px;
+		padding: 32px 40px;
 		width: 100%;
-		@include media(s) {
-			display: none;
-		}
-		img {
-			border: 8px solid $cor-primaria-clara;
-			@include l-border;
-			max-width: 100%;
-			height: auto;
-		}
+		flex-shrink: 0;
+		background-color: #f6f6f6;
+		border: 1px solid #f6f6f6;
+		@include s-border;
+		@include l-shadow;
 	}
-	&__content {
-		@include media(s) {
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			display: flex;
-			padding: 0 24px;
+	&__text {
+		@include hero;
+		color: $neutro-700;
+		span {
+			color: $cor-primaria;
 		}
+		text-align: center;
+		margin-bottom: 16px;
 	}
+	&__desc {
+		@include text;
+		font-size: 20px;
+		text-align: center;
+	}
+}
+.solutions {
+	background-color: $cor-primaria;
+	padding: 80px 24px;
+
 	.default__title {
-		margin: 24px 0px;
+		text-align: center;
+		max-width: 825px;
+		color: $neutro-700;
+		margin: 0 auto;
+		margin-bottom: 24px;
 	}
 	.default__desc {
-		color: $texto-legenda;
-		margin-bottom: 24px;
-		@include media(s) {
-			text-align: center;
+		color: $neutro-700;
+		text-align: center;
+		max-width: 1200px;
+		margin: 0 auto 32px;
+	}
+	&__container {
+		display: flex;
+		gap: 24px;
+		@include container;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	&__card {
+		background-color: $neutro-50;
+		padding: 32px 40px;
+		max-width: 327px;
+		width: 100%;
+		text-align: center;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 900;
+		line-height: 150%;
+		font-family: "avenir_lt_std45_book";
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		font-weight: bold;
+		@include l-shadow;
+		@include s-border;
+	}
+	.button--container {
+		text-align: center;
+		margin-top: 32px;
+		.button {
+			color: $neutro-700;
 		}
 	}
-	&__list {
-		list-style: none;
-		padding: 0;
-		&--item {
-			display: flex;
-			align-items: center;
-			margin-bottom: 16px;
+}
+.map {
+	.hero {
+		background: transparent;
+		position: relative;
+		&::after {
+			content: url("../assets/logo-bigger.png");
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			top: 0;
+			max-width: 639px;
+			opacity: 0.1;
 		}
-		&--text {
-			@include text;
+	}
+	.hero__content {
+		max-width: 754px;
+		padding-top: 0px;
+	}
+	.hero__title {
+		font-family: "avenir_lt_std45_book";
+		margin-bottom: 32px;
+		color: #59595b;
+	}
+	.hero__img {
+		border: none;
+		img {
+			border: none;
+		}
+	}
+}
+.transform {
+	.resources__content {
+		width: 100%;
+	}
+	.card-resources {
+		background-color: #fff;
+		@include l-shadow;
+		@include m-border;
+		border: 1px solid #f6f6f6;
+		max-width: 292px;
+		width: 100%;
+		height: 100%;
+		&__icon {
+			background-color: transparent;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+			margin: 0 auto;
+			display: block;
+			margin-bottom: 24px;
+		}
+		.default__desc {
+			text-align: center;
+			margin-bottom: 0px;
+			b {
+				margin-bottom: 0px;
+				height: unset;
+			}
 		}
 	}
 }
 
 .testimonials {
-	padding: 80px 0px;
+	padding: 80px 24px;
+	background-color: #59595b;
 	@include media(s) {
 		padding: 60px 0px;
 	}
@@ -256,9 +349,10 @@
 		}
 		.default__title {
 			margin: 24px 0px;
+			color: $cor-primaria;
 		}
 		.default__desc {
-			color: $texto-legenda;
+			color: $neutro-50;
 			margin-bottom: 48px;
 		}
 	}
@@ -271,15 +365,78 @@
 		margin-bottom: 48px;
 	}
 	&__card {
-		max-width: 397px;
+		max-width: 292px;
+		height: 524px;
 		padding: 32px 40px;
 		@include s-border;
+		background-color: #f6f6f6;
 		border: 1px solid #f6f6f6;
 		@include l-shadow;
 		&--text {
 			@include text;
 			color: $texto-resources;
 			margin-bottom: 24px;
+			font-style: italic;
+		}
+	}
+}
+.form {
+	.hero {
+		background: $cor-primaria;
+		padding: 80px 24px;
+		&__title {
+			@include general-title;
+			font-size: 40px;
+			line-height: 120%;
+			color: $neutro-700;
+		}
+		&__sub-title {
+			@include general-title;
+			font-size: 32px;
+			margin-bottom: 32px;
+			color: $neutro-700;
+		}
+		.default__desc {
+			color: $neutro-700;
+		}
+		&__slider {
+			@include container;
+			position: relative;
+			&::after {
+				content: "";
+				position: absolute;
+				background: linear-gradient(270deg, #f8dc30 0%, rgba(248, 220, 48, 0) 100%);
+				width: 95px;
+				height: 126px;
+				right: 0px;
+				top: 0;
+			}
+			.testimonials__card {
+				max-width: 298px;
+				.avatar {
+					margin-bottom: 0px;
+				}
+				height: 100%;
+				margin: 0px 8px;
+				padding: 32px 40px;
+			}
+		}
+		.arrows {
+			position: absolute;
+			bottom: 130px;
+			display: flex;
+			width: 100%;
+			left: 0;
+			right: 0;
+			@include container;
+			max-width: 1220px;
+			justify-content: space-between;
+			.prev-hero img {
+				transform: rotate(-180deg);
+			}
+			.next-hero {
+				margin-right: 10px;
+			}
 		}
 	}
 }
@@ -348,9 +505,17 @@
 	padding: 80px 0px;
 	&__container {
 		@include container;
-		display: flex;
-		justify-content: center;
 		gap: 24px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.tag {
+			max-width: 75px;
+			margin: 0 auto;
+		}
+		.default__title {
+			text-align: center;
+		}
 		@include media(s) {
 			flex-direction: column;
 			padding: 0px 24px;
@@ -379,12 +544,16 @@
 		}
 	}
 	&__content {
-		max-width: 640px;
+		max-width: 1240px;
 		width: 100%;
 		.accordion {
+			width: 100%;
+			display: flex;
 			&-item {
 				margin-bottom: 16px;
 				border: none;
+				max-width: 600px;
+				width: 100%;
 				&:last-child {
 					margin-bottom: 0px;
 				}
@@ -400,7 +569,7 @@
 					box-shadow: none;
 				}
 				&:not(.collapsed) {
-					color: $cor-primaria;
+					color: $neutro-700;
 					background-color: $cor-primaria-clara;
 				}
 				&::after {

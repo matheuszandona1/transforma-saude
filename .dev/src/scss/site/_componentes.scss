@@ -2,18 +2,21 @@
 	display: flex;
 	gap: 16px;
 	align-items: center;
+	margin-bottom: 24px;
 	&__img {
 		img {
 			border-radius: 50%;
 			width: 54px;
 			height: 54px;
+			object-fit: cover;
+			object-position: top;
 		}
 	}
 	&__title {
 		margin-bottom: 8px;
 		@include text;
 		font-weight: bold;
-		color: $texto-primario;
+		color: #59595b;
 	}
 	&__desc {
 		@include small-text;
@@ -25,9 +28,9 @@
 	&__text {
 		text-transform: uppercase;
 		@include text;
-		color: $tag-texto;
+		color: $neutro-700;
 	}
-	background-color: $tag;
+	background-color: $cor-primaria-clara;
 	@include s-border;
 	padding: 12px 20px;
 	display: inline-block;
@@ -94,7 +97,7 @@ input:valid + label {
 	line-height: 150%;
 	font-weight: bold;
 	text-decoration: none;
-	color: $neutro-50;
+	color: #59595b;
 	@include s-border;
 	background: $cor-primaria;
 	display: inline-block;
@@ -118,16 +121,25 @@ input:valid + label {
 }
 
 .card-resources {
-	max-width: 397px;
+	max-width: 292px;
+	height: 393px;
 	padding: 32px 40px;
 	background-color: $cor-primaria-clara;
 	@include s-border;
 	&__icon {
 		padding: 16px;
-		background-color: $neutro-50;
+		background-color: $cor-primaria;
 		display: inline-block;
 		@include s-border;
 		margin-bottom: 24px;
 		color: $texto-resources;
+	}
+	.default__desc {
+		b {
+			display: block;
+			color: $neutro-700;
+			margin-bottom: 24px;
+			height: 48px;
+		}
 	}
 }
