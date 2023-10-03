@@ -60,7 +60,7 @@
 	}
 }
 .hero {
-	background: linear-gradient(90deg, rgba(56, 56, 56, 0.7) 0%, rgba(56, 56, 56, 0.7) 35%, rgba(56, 56, 56, 0.7) 100%), url("../assets/hero.jpeg");
+	background: linear-gradient(90deg, rgba(56, 56, 56, 0.7) 0%, rgba(56, 56, 56, 0.7) 35%, rgba(56, 56, 56, 0.7) 100%), url("../assets/hero.jpeg?as=webp");
 	background-size: cover;
 	&__container {
 		display: flex;
