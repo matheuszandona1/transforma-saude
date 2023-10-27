@@ -598,3 +598,26 @@
 		align-items: center;
 	}
 }
+
+.text {
+	padding-top: 60px;
+	&__container {
+		@include container;
+		.default__title {
+			margin-bottom: 16px;
+			&.bigger {
+				@include hero;
+				color: #59595b;
+				margin-bottom: 32px;
+			}
+		}
+		.default__desc {
+			margin-bottom: 24px;
+			&.bigger {
+				color: #59595b;
+				@include sub-title;
+				margin-bottom: 32px;
+			}
+		}
+	}
+}
